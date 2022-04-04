@@ -1,0 +1,32 @@
+
+
+<table class="">
+    <thead>
+      <tr>
+        <td>Title</td>
+        <td>Discription</td>
+        <td>Link</td>
+        <td>Created At</td>        
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of list">
+      <tr>
+        <td>{{user.title}}</td>
+        <td>{{user.description}}</td>
+        <td>
+          
+        </td>  
+        <td>{{user.created_at}}</td>      
+        <td><a href="/videos/view/{{user.id}}" >View</a> | <a href="/videos/edit/{{user.id}}" >Edit</a> | <a href="/videos/delete/{{user.id}}" >Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  
+
+
+  
+
+ 

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CustomerApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+<hr>
+  <h2>Vimeo Plugin</h2>
+
+  <div id="made-in-ny"></div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    const options = {
+        id: 59777392,
+        width: 640,
+        loop: true
+    };
+
+    const player = new Vimeo.Player('made-in-ny', options);
+
+    player.setVolume(0);
+
+    player.on('play', function() {
+        console.log('played the video!');
+    });
+</script>
+</body>
+</html>

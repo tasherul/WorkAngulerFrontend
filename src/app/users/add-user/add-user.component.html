@@ -1,0 +1,20 @@
+<form [formGroup]="addUserForm" (submit)="createUser()" >
+
+    
+    <div class="container">
+ 
+  
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" formControlName="email" required>
+  
+        <label for="phone"><b>Name</b></label>
+        <input type="text" placeholder="Enter phone" formControlName="phone" required>
+  
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" formControlName="username" required>
+  
+ 
+        <button type="submit">Registration</button>
+        
+      </div>
+</form>

@@ -1,0 +1,14 @@
+
+<ul *ngIf="!session_chek()">
+    <li><a href="/sign-in">Sign-in</a></li>
+    <li><a href="/sign-up">Registration</a></li>
+</ul>
+
+
+
+<ul *ngIf="session_chek()">
+    <li><a href="/users/list">Students</a></li>
+    <li><a href="/courses/list">Courses</a></li>
+    <li><a href="/videos/list">Video</a></li>
+    
+</ul>

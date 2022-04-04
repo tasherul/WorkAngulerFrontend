@@ -1,0 +1,20 @@
+<table class="">
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Discription</td>
+        <td>Created At</td>        
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of listCourse">
+      <tr>
+        <td>{{user.name}}</td>
+        <td>{{user.description}}</td>
+        <td>{{user.created_at}}</td>        
+        <td><a href="/courses/view/{{user.id}}" >View</a> | <a href="/courses/edit/{{user.id}}" >Edit</a> | <a href="/courses/delete/{{user.id}}" >Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  

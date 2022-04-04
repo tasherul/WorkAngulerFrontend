@@ -1,0 +1,73 @@
+<h3>Student Name: {{listStudentCourses['student']['name']}}</h3>
+<h4>Father's Name: {{listStudentCourses['student']['father_name']}}</h4>
+<h4>Mother's Name: {{listStudentCourses['student']['mother_name']}}</h4>
+<h4>Phone: {{listStudentCourses['student']['phone']}}</h4>
+
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Course</button>
+
+<div id="id01" class="modal">
+    <form class="modal-content animate" [formGroup]="courseaddForm" (submit)="addCourse()" method="post">
+
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <div class="avatar">
+            <h4>Add Course</h4>
+        </div>
+      </div>
+  <input type="hidden" formControlName="student_id" value="{{id}}">
+      <div class="container">
+        <label for="course_id"><b>Course</b></label>
+        <select class="from-control" id="pCategory" formControlName="course_id">
+            <option value="" selected disabled>Choose Course</option>
+            <option *ngFor="let c of listCourse" value="{{c.id}}">{{c.name}}</option>
+        </select>
+  
+      
+        <button type="submit">Add</button>
+     
+      </div>
+  
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+       
+      </div>
+    </form>
+  </div>
+  
+<table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Create</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody *ngFor="let key of listStudentCourses['courses']">
+      <tr>
+        <td>{{key.name}}</td>
+        <td>{{key.description}}</td>
+        <td>{{key.created_at}}</td>        
+        <td>
+            <a href="/studencourse/{{key.id}}">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    var modal2 = document.getElementById('id02');
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+          }
+          if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+    }
+    </script>
