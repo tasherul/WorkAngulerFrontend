@@ -22,9 +22,15 @@ export class StudentCoursesService {
     return this.http.get(this.baseUrl + 'student_courses/' + id, this.options);
   }
   listCourses() {
-    return this.http.get(this.baseUrl + 'courses', this.options);
+    return this.http.get(this.baseUrl + 'student_courses', this.options);
   }
   addCourse(fromData: any) {
-    return this.http.post(this.baseUrl + 'courses', this.options);
+    return this.http.post(this.baseUrl + 'student_courses',fromData, this.options);
+  }
+  deleteCourse(id:string) {
+    return this.http.delete(this.baseUrl + 'student_courses/'+id, this.options);
+  }
+  updateCourse(fromData: any) {
+    return this.http.put(this.baseUrl + 'student_courses',fromData, this.options);
   }
 }

@@ -20,12 +20,16 @@ export class CourseService {
   listCourses(){
     return this.http.get(this.baseUrl+'courses', this.options);
   }
-  // loginUser(userObj: any) {
-  //   console.log(userObj);
-  //   return this.http.post(this.baseUrl + 'login', userObj, this.options);
-  // }
-  // registration(fromData: any) {
-  //   console.log(fromData);
-  //   return this.http.post(this.baseUrl + 'register', fromData, this.options);
-  // }
+  selectCourses(id: string) {
+    return this.http.get(this.baseUrl + 'courses/' + id, this.options);
+  }
+  addCourse(fromData: any) {
+    return this.http.post(this.baseUrl + 'courses',fromData, this.options);
+  }
+  updateCourse(fromData: any) {
+    return this.http.put(this.baseUrl + 'courses',fromData, this.options);
+  }
+  deleteCourse(id:string) {
+    return this.http.delete(this.baseUrl + 'courses/'+id, this.options);
+  }
 }
